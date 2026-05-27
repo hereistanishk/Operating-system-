@@ -4,7 +4,9 @@ import Weather from '../apps/Weather';
 import Settings from '../apps/Settings';
 import Browser from '../apps/Browser';
 import AppStore from '../apps/AppStore';
-import { Calculator as CalcIcon, FileText, CloudSun, Settings as SettingsIcon, Globe, ShoppingBag } from 'lucide-react';
+import EcommerceApp from '../apps/EcommerceApp';
+import SellerDashboard from '../apps/SellerDashboard';
+import { Calculator as CalcIcon, FileText, CloudSun, Settings as SettingsIcon, Globe, ShoppingBag, ShoppingCart, Store } from 'lucide-react';
 import type { AppMeta } from '../types';
 
 export const apps: AppMeta[] = [
@@ -28,6 +30,22 @@ export const apps: AppMeta[] = [
     icon: CloudSun,
     color: 'bg-gradient-to-br from-indigo-600 to-blue-500 text-white',
     component: Weather,
+  },
+  {
+    id: 'ecommerce',
+    name: 'Shop',
+    icon: ShoppingCart,
+    color: 'bg-gradient-to-br from-blue-500 to-indigo-600 text-white',
+    component: EcommerceApp,
+    inDock: true,
+  },
+  {
+    id: 'seller',
+    name: 'Seller Hub',
+    icon: Store,
+    color: 'bg-gradient-to-br from-emerald-500 to-teal-600 text-white',
+    component: SellerDashboard,
+    inDock: true,
   },
   {
     id: 'appstore',

@@ -6,6 +6,7 @@ import StatusBar from './StatusBar';
 interface WindowProps {
   app: AppMeta;
   onClose: () => void;
+  key?: string;
 }
 
 export default function Window({ app, onClose }: WindowProps) {
@@ -24,7 +25,9 @@ export default function Window({ app, onClose }: WindowProps) {
       </div>
 
       <div className="flex-1 w-full relative">
-        <app.component />
+        <div className="absolute inset-0 flex flex-col">
+          <app.component />
+        </div>
       </div>
     </motion.div>
   );

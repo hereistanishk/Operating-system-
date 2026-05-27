@@ -6,6 +6,7 @@ import { useOS } from '../context/OSContext';
 
 interface LockScreenProps {
   onUnlock: () => void;
+  key?: string;
 }
 
 export default function LockScreen({ onUnlock }: LockScreenProps) {

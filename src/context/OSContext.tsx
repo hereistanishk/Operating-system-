@@ -40,7 +40,10 @@ export function OSProvider({ children }: { children: ReactNode }) {
 
   const [installedApps, setInstalledApps] = useState<string[]>(() => {
     const saved = localStorage.getItem('os_installedApps');
-    return saved ? JSON.parse(saved) : ['calculator', 'notes', 'weather', 'browser', 'settings', 'appstore'];
+    const parsed = saved ? JSON.parse(saved) : ['calculator', 'notes', 'weather', 'browser', 'settings', 'appstore'];
+    if (!parsed.includes('ecommerce')) parsed.push('ecommerce');
+    if (!parsed.includes('seller')) parsed.push('seller');
+    return parsed;
   });
 
   useEffect(() => {
